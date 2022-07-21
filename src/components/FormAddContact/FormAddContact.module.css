@@ -1,0 +1,47 @@
+.form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  font-size: 18px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+
+  transform: scale(1);
+  transition: transform 200ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.05);
+}
+
+.AddContactIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  color: var(--border-color);
+}

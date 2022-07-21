@@ -1,0 +1,56 @@
+.contactItem {
+  display: flex;
+  justify-content: left;
+  width: 400px;
+  padding: 5px 10px;
+  margin: 0 auto;
+
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transform: scale(1);
+  transition: transform 200ms linear;
+}
+
+.contactItem:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.contactItem {
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  color: var(--border-color);
+}
+
+.contactName,
+.contactNumber {
+  margin: 5px 0;
+}
+
+.contactName {
+  margin-right: 10px;
+}
+
+.btnDelete {
+  width: 90px;
+  margin-left: auto;
+
+  border-radius: 4px;
+  border: 1px solid currentColor;
+  color: var(--border-color);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 200ms linear, color 200ms linear;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  color: var(--warning-color);
+  border-color: currentColor;
+  transform: scale(1.1);
+}
