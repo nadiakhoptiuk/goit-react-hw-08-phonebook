@@ -2,8 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ContactItem from 'components/ContactItem';
-import { filterSelector } from 'redux/filterContactsReducer/filterSelector';
-import { updateFilter } from 'redux/filterContactsReducer/filterActions';
+import { filterSelector } from 'redux/filter/filterSelector';
+import { updateFilter } from 'redux/filter/filterActions';
 import s from './ContactsList.module.css';
 import { useGetContactsQuery } from 'redux/contacts';
 

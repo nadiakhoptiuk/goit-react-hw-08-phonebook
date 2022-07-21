@@ -1,0 +1,11 @@
+.authList {
+  display: flex;
+}
+
+.authItem {
+  font-size: 20px;
+}
+
+.authItem:not(:last-child) {
+  margin-right: 20px;
+}

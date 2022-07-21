@@ -1,37 +1,25 @@
 import React from 'react';
-import { Watch } from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import Section from './Section';
-import FormAddContact from './FormAddContact';
-import ContactsList from './ContactsList';
-import FilterInput from './FilterInput';
-import { useGetContactsQuery } from 'redux/contacts';
+import PhonebookView from 'views/PhonebookView';
+import AuthNav from './AuthNav';
+import { Route, Routes } from 'react-router-dom';
+import RegisterView from 'views/RegisterView/RegisterView';
 
 export default function App() {
-  const { isFetching } = useGetContactsQuery();
-
   return (
     <>
-      <Section title="Phonebook">
-        <FormAddContact />
-      </Section>
+      <header className="header">
+        <div className="headerContainer">
+          <h1>Phonebook</h1>
+          <AuthNav />
+          {/* <UserMenu /> */}
+        </div>
+      </header>
 
-      <Section title="Contacts">
-        {isFetching ? (
-          <Watch
-            height={58}
-            width={58}
-            radius={45}
-            color="#00BFFF"
-            wrapperClass="loader"
-            ariaLabel="loading-indicator"
-          />
-        ) : (
-          <FilterInput />
-        )}
-
-        <ContactsList />
-      </Section>
+      <Routes>
+        <Route path="" element={<PhonebookView />} />
+        <Route path="/registration" element={<RegisterView />} />
+        {/* <Route path="/authorization" element={<AuthView/>}/> */}
+      </Routes>
     </>
   );
 }

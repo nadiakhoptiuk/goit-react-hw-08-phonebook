@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { updateFilter } from 'redux/filterContactsReducer/filterActions';
+import { updateFilter } from 'redux/filter/filterActions';
 import { FaUserAlt } from 'react-icons/fa';
 import s from './ContactItem.module.css';
 import { useRemoveContactMutation } from 'redux/contacts';

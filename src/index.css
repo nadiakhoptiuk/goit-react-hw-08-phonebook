@@ -1,7 +1,7 @@
 @import 'modern-normalize/modern-normalize.css';
 
 :root {
-  --border-color: #afafaf;
+  --border-color: #d1d0d0;
   --warning-color: #d44444b6;
 }
 
@@ -29,7 +29,53 @@ p {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
 .loader {
   justify-content: center;
   align-items: center;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.sectionTitleIsHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
