@@ -31,6 +31,7 @@ export default function RegisterView() {
       register({ name: userName, email: userEmail, password: userPassword })
     );
     formReset();
+    // TODO chande path for auth, redirect
   };
 
   const formReset = () => {
@@ -47,6 +48,7 @@ export default function RegisterView() {
           label="Name:"
           variant="outlined"
           type="text"
+          autoFocus="true"
           className={s.input}
           value={userName}
           onChange={handleUserNameChange}
@@ -65,6 +67,8 @@ export default function RegisterView() {
           label="Password:"
           variant="outlined"
           type="password"
+          minlength="7"
+          required
           className={s.input}
           value={userPassword}
           onChange={handleUserPasswordChange}
@@ -72,6 +76,7 @@ export default function RegisterView() {
         <Button
           variant="contained"
           type="submit"
+          disabled={!userName || !userEmail || !userPassword ? true : false}
           className={s.registerBtn}
           endIcon={<SendIcon />}
         >
