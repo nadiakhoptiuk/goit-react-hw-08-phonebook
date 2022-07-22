@@ -33,7 +33,6 @@ export default function ContactsList() {
       dispatch(updateFilter(''));
     }
   }, [data, dispatch]);
-  console.log(data);
 
   return (
     <ul className={s.contactsList}>

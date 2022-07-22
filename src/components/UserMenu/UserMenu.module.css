@@ -3,6 +3,15 @@
   align-items: center;
 }
 
+.avatar {
+  height: 30px !important;
+  width: 30px !important;
+  margin-right: 10px;
+
+  font-size: 16px !important;
+  background-color: rgb(25, 118, 210) !important;
+}
+
 .welcomeText {
   font-size: 20px;
   font-weight: 500;
@@ -10,10 +19,8 @@
   margin-right: 20px;
 }
 
-.avatar {
-  height: 30px;
-  width: 30px;
-  margin-right: 20px;
-  font-size: 15px;
-  background-color: rgb(25, 118, 210);
+.btnLogOut {
+  line-height: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

@@ -5,13 +5,9 @@ import FilterInput from 'components/FilterInput';
 import { Watch } from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { useGetContactsQuery } from 'redux/contacts';
-import { useSelector } from 'react-redux';
 
 export default function PhonebookView() {
   const { isFetching } = useGetContactsQuery();
-  const token = useSelector(state => state.auth.token);
-
-  console.log(token);
 
   return (
     <>

@@ -26,6 +26,7 @@ export default function UserMenu() {
       <Button
         variant="outlined"
         type="button"
+        className={s.btnLogOut}
         onClick={() => dispatch(logOut())}
       >
         Log Out
