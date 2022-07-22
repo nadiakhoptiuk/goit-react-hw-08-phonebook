@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { updateFilter } from 'redux/filter/filterActions';
-import { FaUserAlt } from 'react-icons/fa';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import s from './ContactItem.module.css';
 import { useRemoveContactMutation } from 'redux/contacts';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import LoadingButton from '@mui/lab/LoadingButton';
+import EditIcon from '@mui/icons-material/Edit';
 
 export default function ContactItem({ contactData }) {
   const [updateContactsByRemove, { isLoading }] = useRemoveContactMutation();
@@ -17,16 +21,36 @@ export default function ContactItem({ contactData }) {
 
   return (
     <li className={s.contactItem}>
-      <FaUserAlt className={s.icon} />
+      <PersonRoundedIcon className={s.icon} />
       <p className={s.contactName}>{contactData.name}:</p>
       <p className={s.contactNumber}>{contactData.number}</p>
-      <button
-        className={s.btnDelete}
-        type="button"
-        onClick={() => onContactDelete(contactData.id)}
-      >
-        {isLoading ? 'Deletion...' : 'Delete'}
-      </button>
+      <ul className={s.btnList}>
+        <IconButton
+          aria-label="edit"
+          size="large"
+          className={s.btnEdit}
+          type="button"
+          // onClick={() => onContactEdit(contactData.id)}
+        >
+          <EditIcon />
+        </IconButton>
+
+        {isLoading ? (
+          <LoadingButton loading variant="outlined" className={s.btnDelete}>
+            Submit
+          </LoadingButton>
+        ) : (
+          <IconButton
+            aria-label="delete"
+            size="large"
+            className={s.btnDelete}
+            type="button"
+            onClick={() => onContactDelete(contactData.id)}
+          >
+            <DeleteIcon />
+          </IconButton>
+        )}
+      </ul>
     </li>
   );
 }

@@ -1,56 +1,78 @@
 .contactItem {
   display: flex;
-  justify-content: left;
-  width: 400px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 500px;
   padding: 5px 10px;
-  margin: 0 auto;
+  margin: 10px;
 
+  background-color: #fff;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   transform: scale(1);
-  transition: transform 200ms linear;
+  transition: all 200ms linear;
 }
 
 .contactItem:hover {
+  border-color: rgba(25, 118, 210, 0.5);
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.contactItem {
-  margin-bottom: 10px;
+.contactItem:hover .icon {
+  color: rgba(25, 118, 210, 0.5);
+}
+
+.contactItem:hover .btnDelete,
+.contactItem:hover .btnEdit {
+  border-color: rgba(25, 118, 210, 0.5) !important;
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-  color: var(--border-color);
+  color: rgba(0, 0, 0, 0.54);
+
+  transition: all 200ms linear;
 }
 
 .contactName,
 .contactNumber {
   margin: 5px 0;
-}
-
-.contactName {
   margin-right: 10px;
 }
 
-.btnDelete {
-  width: 90px;
+.btnList {
   margin-left: auto;
+}
 
-  border-radius: 4px;
-  border: 1px solid currentColor;
-  color: var(--border-color);
+.btnDelete {
+  width: 64px;
+  padding: 5px 10px !important;
+  background-color: #fff !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border-color) !important;
   cursor: pointer;
   transform: scale(1);
-  transition: transform 200ms linear, color 200ms linear;
+  transition: all 200ms linear;
 }
 
 .btnDelete:hover,
 .btnDelete:focus {
   color: var(--warning-color);
+  border-color: currentColor;
+  transform: scale(1.1);
+}
+
+.btnEdit {
+  composes: btnDelete;
+  margin-right: 10px;
+}
+
+.btnEdit:hover,
+.btnEdit:focus {
+  color: var(--edit-color);
   border-color: currentColor;
   transform: scale(1.1);
 }
