@@ -2,18 +2,13 @@ import Section from 'components/Section';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import s from './RegisterView.module.css';
-import useFormFields from 'hooks/useFormFields';
+import s from './LogInView.module.css';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/authOperations';
+import useFormFields from 'hooks/useFormFields';
+import { logIn } from 'redux/auth/authOperations';
 
-export default function RegisterView() {
+export default function LogInView() {
   const dispatch = useDispatch();
-  const {
-    state: userName,
-    setState: setUserName,
-    handleChange: handleUserNameChange,
-  } = useFormFields('');
   const {
     state: userEmail,
     setState: setUserEmail,
@@ -25,34 +20,21 @@ export default function RegisterView() {
     handleChange: handleUserPasswordChange,
   } = useFormFields('');
 
-  const handleRegisterSubmit = evt => {
+  const handleLogInSubmit = evt => {
     evt.preventDefault();
-    dispatch(
-      register({ name: userName, email: userEmail, password: userPassword })
-    );
+    dispatch(logIn({ email: userEmail, password: userPassword }));
     formReset();
     // TODO chande path for auth, redirect
   };
 
   const formReset = () => {
-    setUserName('');
     setUserEmail('');
     setUserPassword('');
   };
 
   return (
-    <Section title="Please register" isHidden={false}>
-      <form className={s.form} onSubmit={handleRegisterSubmit}>
-        <TextField
-          id="outlined-basic"
-          label="Name:"
-          variant="outlined"
-          type="text"
-          // autoFocus={true}
-          className={s.input}
-          value={userName}
-          onChange={handleUserNameChange}
-        />
+    <Section title="Please sign in for more options" isHidden={false}>
+      <form className={s.form} onSubmit={handleLogInSubmit}>
         <TextField
           id="outlined-basic"
           label="Email:"
@@ -75,13 +57,11 @@ export default function RegisterView() {
         <Button
           variant="contained"
           type="submit"
-          disabled={
-            !userName || !userEmail || userPassword.length < 7 ? true : false
-          }
+          disabled={!userEmail || userPassword.length < 7 ? true : false}
           className={s.registerBtn}
           endIcon={<SendIcon />}
         >
-          Register now
+          Log In
         </Button>
       </form>
     </Section>
