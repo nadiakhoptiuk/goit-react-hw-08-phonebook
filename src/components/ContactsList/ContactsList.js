@@ -11,6 +11,7 @@ export default function ContactsList() {
   const { data } = useGetContactsQuery('', {
     refetchOnFocus: true,
     refetchOnReconnect: true,
+    refetchOnMountOrArgChange: true,
   });
   const dispatch = useDispatch();
   const filter = useSelector(filterSelector);
@@ -32,6 +33,7 @@ export default function ContactsList() {
       dispatch(updateFilter(''));
     }
   }, [data, dispatch]);
+  console.log(data);
 
   return (
     <ul className={s.contactsList}>

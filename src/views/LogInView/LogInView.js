@@ -40,6 +40,7 @@ export default function LogInView() {
           label="Email:"
           variant="outlined"
           type="email"
+          autoFocus={true}
           className={s.input}
           value={userEmail}
           onChange={handleUserEmailChange}

@@ -67,7 +67,7 @@
 
 .btnEdit {
   composes: btnDelete;
-  margin-right: 10px;
+  margin-right: 10px !important;
 }
 
 .btnEdit:hover,

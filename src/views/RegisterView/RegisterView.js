@@ -48,7 +48,7 @@ export default function RegisterView() {
           label="Name:"
           variant="outlined"
           type="text"
-          // autoFocus={true}
+          autoFocus={true}
           className={s.input}
           value={userName}
           onChange={handleUserNameChange}

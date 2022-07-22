@@ -34,7 +34,6 @@ export default function ContactItem({ contactData }) {
         >
           <EditIcon />
         </IconButton>
-
         {isLoading ? (
           <LoadingButton loading variant="outlined" className={s.btnDelete}>
             Submit

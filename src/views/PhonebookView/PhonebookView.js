@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 export default function PhonebookView() {
   const { isFetching } = useGetContactsQuery();
-  const token = useSelector(state => state.token);
+  const token = useSelector(state => state.auth.token);
 
   console.log(token);
 

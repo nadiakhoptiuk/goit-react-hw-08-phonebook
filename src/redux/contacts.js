@@ -20,6 +20,7 @@ export const contactsApi = createApi({
       query: () => ({
         url: '/contacts',
       }),
+      // invalidatesTags: ['Contacts'],
       providesTags: ['Contacts'],
     }),
     removeContact: builder.mutation({
