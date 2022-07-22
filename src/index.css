@@ -47,6 +47,11 @@ a {
   border-bottom: 1px solid var(--border-color);
 }
 
+.phonebookLink {
+  font-size: 25px;
+  font-weight: 500;
+}
+
 .loader {
   justify-content: center;
   align-items: center;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PhonebookView from 'views/PhonebookView';
 import AuthNav from './AuthNav';
 import { Route, Routes } from 'react-router-dom';
@@ -15,13 +16,17 @@ export default function App() {
     <>
       <header className="header">
         <div className="headerContainer">
-          <h1>Phonebook</h1>
+          <nav>
+            <Link to="/contacts" className="phonebookLink">
+              Phonebook
+            </Link>
+          </nav>
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </div>
       </header>
 
       <Routes>
-        <Route path="" element={<PhonebookView />} />
+        <Route path="/contacts" element={<PhonebookView />} />
         <Route path="/registration" element={<RegisterView />} />
         <Route path="/authorization" element={<LogInView />} />
         {/* <Route path="/contacts" element={<ContactsView />}></Route> */}
