@@ -1,16 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Route, Routes } from 'react-router-dom';
 import PhonebookView from 'views/PhonebookView';
 import AuthNav from './AuthNav';
-import { Route, Routes } from 'react-router-dom';
 import RegisterView from 'views/RegisterView/RegisterView';
 import LogInView from 'views/LogInView';
 import UserMenu from './UserMenu';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import { refreshCurrentUser } from 'redux/auth/authOperations';
 
 export default function App() {
   const isLoggedIn = useSelector(getIsLoggedIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshCurrentUser());
+  }, [dispatch]);
 
   return (
     <>

@@ -1,5 +1,5 @@
 import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { filterContactsReducer } from './filter/filterContactsReducer';
@@ -22,6 +22,8 @@ export const store = configureStore({
     ...getDefaultMiddleware(),
     contactsApi.middleware,
   ],
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 setupListeners(store.dispatch);
+export const persistor = persistStore(store);
