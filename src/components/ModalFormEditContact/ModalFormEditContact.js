@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { useEditContactMutation } from 'redux/contacts';
 import useFormFields from '../../hooks/useFormFields';
@@ -7,11 +7,13 @@ import PropTypes from 'prop-types';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import s from './ModalFormEditContact.module.css';
 import { updateModalState, resetOpenedContact } from 'redux/modal/modalActions';
+import { isModalShownSelector } from 'redux/modal/modalSelectors';
+import { useEffect } from 'react';
 
 const modalRoot = document.querySelector('#modal-root');
 
 export default function ModalFormEditContact({ openedContact }) {
-  const [editContact, { isLoading }] = useEditContactMutation();
+  const [editContact] = useEditContactMutation();
   const {
     state: name,
     setState: setName,
@@ -23,55 +25,48 @@ export default function ModalFormEditContact({ openedContact }) {
     handleChange: handleNumberChange,
   } = useFormFields(openedContact.number);
   const dispatch = useDispatch();
+  const isModalShown = useSelector(isModalShownSelector);
 
-  const handleEditSubmit = async evt => {
+  const handleEditSubmit = evt => {
     evt.preventDefault();
     const contactData = {
       name,
       number,
     };
 
-    dispatch(editContact({ id: openedContact.id, contact: contactData }));
-
     dispatch(updateModalState());
-    dispatch(resetOpenedContact());
+    dispatch(editContact({ id: openedContact.id, contact: contactData }));
+    //  () => dispatch(resetOpenedContact());
   };
 
-  // const closeModal = useCallback(() => {
-  //   setShowModal();
-  // }, [setShowModal]);
+  const onBackdropClose = useCallback(
+    evt => {
+      if (evt.target === evt.currentTarget) {
+        dispatch(updateModalState());
+      }
+    },
+    [dispatch]
+  );
 
-  // const onBackdropClose = useCallback(
-  //   evt => {
-  //     if (evt.target === evt.currentTarget) {
-  //       closeModal();
-  //     }
-  //   },
-  //   [closeModal]
-  // );
+  useEffect(() => {
+    const handleKeyDown = evt => {
+      if (evt.code === 'Escape') {
+        dispatch(updateModalState());
+      }
+    };
 
-  // useEffect(() => {
-  //   const handleKeyDown = evt => {
-  //     if (evt.code === 'Escape') {
-  //       closeModal();
-  //     }
-  //   };
-
-  //   if (isModalOpen) {
-  //     window.addEventListener('keydown', handleKeyDown);
-  //     document.body.classList.add('modal-is-open');
-  //   }
-  //   return () => {
-  //     window.removeEventListener('keydown', handleKeyDown);
-  //     document.body.classList.remove('modal-is-open');
-  //   };
-  // }, [closeModal, isModalOpen]);
+    if (isModalShown) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.classList.add('modal-is-open');
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.classList.remove('modal-is-open');
+    };
+  }, [dispatch, isModalShown]);
 
   return createPortal(
-    <div
-      className={s.overlay}
-      // onClick={onBackdropClose}
-    >
+    <div className={s.overlay} onClick={onBackdropClose}>
       <div className={s.modal}>
         <h2 className={s.title}>Please edit your contact:</h2>
         <form className={s.form} onSubmit={handleEditSubmit}>

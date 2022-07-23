@@ -15,6 +15,8 @@ import { filterContactsReducer } from './filter/filterContactsReducer';
 import { contactsApi } from './contacts';
 import authReducer from './auth/authSlice';
 import { modalReducer } from './modal/modalReducer';
+import { applyMiddleware } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
 
 const authPersistConfig = {
   key: 'auth',
@@ -31,12 +33,16 @@ export const store = configureStore({
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
+      thunk: {
+        extraArgument: contactsApi,
+      },
       serializableCheck: {
         ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
     contactsApi.middleware,
   ],
+
   devTools: process.env.NODE_ENV === 'development',
 });
 

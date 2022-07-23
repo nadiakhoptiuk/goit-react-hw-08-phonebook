@@ -9,7 +9,6 @@ import { useGetContactsQuery } from 'redux/contacts';
 
 export default function ContactsList() {
   const { data } = useGetContactsQuery('', {
-    // refetchOnFocus: true,
     refetchOnReconnect: true,
     refetchOnMountOrArgChange: true,
   });

@@ -18,12 +18,9 @@ export default function ContactItem({ contactData }) {
   const [updateContactsByRemove, { isLoading }] = useRemoveContactMutation();
   const dispatch = useDispatch();
 
-  // useEffect(() => {}, [openedContactId]);
-
   const onContactEdit = contact => {
     dispatch(setOpenedContact(contact));
     dispatch(updateModalState());
-    // updateContactsByEdit(contact); // ??
   };
 
   const onContactDelete = id => {
