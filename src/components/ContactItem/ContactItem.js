@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateFilter } from 'redux/filter/filterActions';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import s from './ContactItem.module.css';
@@ -9,10 +9,22 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import LoadingButton from '@mui/lab/LoadingButton';
 import EditIcon from '@mui/icons-material/Edit';
+import {
+  setOpenedContact,
+  updateModalState,
+} from '../../redux/modal/modalActions';
 
 export default function ContactItem({ contactData }) {
   const [updateContactsByRemove, { isLoading }] = useRemoveContactMutation();
   const dispatch = useDispatch();
+
+  // useEffect(() => {}, [openedContactId]);
+
+  const onContactEdit = contact => {
+    dispatch(setOpenedContact(contact));
+    dispatch(updateModalState());
+    // updateContactsByEdit(contact); // ??
+  };
 
   const onContactDelete = id => {
     updateContactsByRemove(id);
@@ -30,10 +42,11 @@ export default function ContactItem({ contactData }) {
           size="large"
           className={s.btnEdit}
           type="button"
-          // onClick={() => onContactEdit(contactData.id)}
+          onClick={() => onContactEdit(contactData)}
         >
           <EditIcon />
         </IconButton>
+
         {isLoading ? (
           <LoadingButton loading variant="outlined" className={s.btnDelete}>
             Submit

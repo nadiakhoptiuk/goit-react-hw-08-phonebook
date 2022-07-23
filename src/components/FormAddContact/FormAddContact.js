@@ -1,8 +1,8 @@
 import React from 'react';
-import { FaUserPlus } from 'react-icons/fa';
 import useFormFields from 'hooks/useFormFields';
 import s from './FormAddContact.module.css';
 import { useGetContactsQuery, useAddContactMutation } from 'redux/contacts';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 export default function FormAddContact() {
   const {
@@ -70,7 +70,7 @@ export default function FormAddContact() {
         />
       </label>
       <button className={s.btn} type="submit">
-        <FaUserPlus className={s.AddContactIcon} />
+        <PersonAddIcon className={s.addContactIcon} />
         {isLoading ? 'Addition...' : 'Add contact'}
       </button>
     </form>

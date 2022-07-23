@@ -1,18 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Header from './Header';
 import PhonebookView from 'views/PhonebookView';
-import AuthNav from './AuthNav';
 import RegisterView from 'views/RegisterView/RegisterView';
 import LogInView from 'views/LogInView';
-import UserMenu from './UserMenu';
-import { getIsLoggedIn } from 'redux/auth/authSelectors';
 import { refreshCurrentUser } from 'redux/auth/authOperations';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
+import ModalFormEditContact from './ModalFormEditContact';
+import {
+  isModalShownSelector,
+  openedContactSelector,
+} from 'redux/modal/modalSelectors';
 
 export default function App() {
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const isModalShown = useSelector(isModalShownSelector);
+  const openedContact = useSelector(openedContactSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,45 +25,37 @@ export default function App() {
 
   return (
     <>
-      <header className="header">
-        <div className="headerContainer">
-          {isLoggedIn ? (
-            <>
-              <h1 className="phonebookLink">Phonebook</h1>
-              <UserMenu />
-            </>
-          ) : (
-            <AuthNav />
-          )}
-        </div>
-      </header>
+      <Header />
 
-      <Routes>
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirect="/authorization">
-              <PhonebookView />
-            </PrivateRoute>
-          }
-        ></Route>
-        <Route
-          path="/registration"
-          element={
-            <PublicRoute redirect="/contacts">
-              <RegisterView />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/authorization"
-          element={
-            <PublicRoute redirect="/contacts">
-              <LogInView />
-            </PublicRoute>
-          }
-        />
-      </Routes>
+      <main>
+        <Routes>
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirect="/authorization">
+                <PhonebookView />
+              </PrivateRoute>
+            }
+          ></Route>
+          <Route
+            path="/registration"
+            element={
+              <PublicRoute redirect="/contacts">
+                <RegisterView />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/authorization"
+            element={
+              <PublicRoute redirect="/contacts">
+                <LogInView />
+              </PublicRoute>
+            }
+          />
+        </Routes>
+      </main>
+      {isModalShown && <ModalFormEditContact openedContact={openedContact} />}
     </>
   );
 }

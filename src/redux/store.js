@@ -14,6 +14,7 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import { filterContactsReducer } from './filter/filterContactsReducer';
 import { contactsApi } from './contacts';
 import authReducer from './auth/authSlice';
+import { modalReducer } from './modal/modalReducer';
 
 const authPersistConfig = {
   key: 'auth',
@@ -26,6 +27,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     [contactsApi.reducerPath]: contactsApi.reducer,
     filter: filterContactsReducer,
+    modal: modalReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
