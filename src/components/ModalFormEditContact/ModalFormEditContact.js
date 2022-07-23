@@ -1,14 +1,13 @@
+import { useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useCallback } from 'react';
-import { useEditContactMutation } from 'redux/contacts';
-import useFormFields from '../../hooks/useFormFields';
 import PropTypes from 'prop-types';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import s from './ModalFormEditContact.module.css';
+import { useEditContactMutation } from 'redux/contacts';
+import useFormFields from '../../hooks/useFormFields';
 import { updateModalState, resetOpenedContact } from 'redux/modal/modalActions';
 import { isModalShownSelector } from 'redux/modal/modalSelectors';
-import { useEffect } from 'react';
+import s from './ModalFormEditContact.module.css';
 
 const modalRoot = document.querySelector('#modal-root');
 

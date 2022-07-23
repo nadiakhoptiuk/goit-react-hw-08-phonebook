@@ -1,18 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateFilter } from 'redux/filter/filterActions';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import s from './ContactItem.module.css';
-import { useRemoveContactMutation } from 'redux/contacts';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import LoadingButton from '@mui/lab/LoadingButton';
 import EditIcon from '@mui/icons-material/Edit';
+import { updateFilter } from 'redux/filter/filterActions';
+import { useRemoveContactMutation } from 'redux/contacts';
 import {
   setOpenedContact,
   updateModalState,
 } from '../../redux/modal/modalActions';
+import s from './ContactItem.module.css';
 
 export default function ContactItem({ contactData }) {
   const [updateContactsByRemove, { isLoading }] = useRemoveContactMutation();
