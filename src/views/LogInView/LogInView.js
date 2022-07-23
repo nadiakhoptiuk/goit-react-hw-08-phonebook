@@ -1,11 +1,11 @@
-import Section from 'components/Section';
+import { useDispatch } from 'react-redux';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import s from './LogInView.module.css';
-import { useDispatch } from 'react-redux';
+import Section from 'components/Section';
 import useFormFields from 'hooks/useFormFields';
 import { logIn } from 'redux/auth/authOperations';
+import s from './LogInView.module.css';
 
 export default function LogInView() {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export default function LogInView() {
   };
 
   return (
-    <Section title="Please sign in for more options" isHidden={false}>
+    <Section title="Please sign in to access the site" isHidden={false}>
       <form className={s.form} onSubmit={handleLogInSubmit}>
         <TextField
           id="outlined-basic"

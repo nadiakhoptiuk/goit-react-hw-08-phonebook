@@ -42,6 +42,16 @@ a {
   color: inherit;
 }
 
+.navLink {
+  font-size: 20px;
+  color: black;
+}
+
+.activeNavLink {
+  composes: navLink;
+  color: rgb(25, 118, 210);
+}
+
 .header {
   display: flex;
   padding: 20px;
