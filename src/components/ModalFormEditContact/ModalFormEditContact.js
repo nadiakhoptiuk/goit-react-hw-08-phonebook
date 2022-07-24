@@ -33,9 +33,9 @@ export default function ModalFormEditContact({ openedContact }) {
       number,
     };
 
+    editContact({ id: openedContact.id, contact: contactData });
     dispatch(updateModalState());
-    dispatch(editContact({ id: openedContact.id, contact: contactData }));
-    //  () => dispatch(resetOpenedContact());
+    dispatch(resetOpenedContact());
   };
 
   const onBackdropClose = useCallback(

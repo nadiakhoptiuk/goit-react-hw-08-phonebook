@@ -1,11 +1,11 @@
-import Section from 'components/Section';
+import { useDispatch } from 'react-redux';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import s from './RegisterView.module.css';
 import useFormFields from 'hooks/useFormFields';
-import { useDispatch } from 'react-redux';
+import Section from 'components/Section';
 import { register } from 'redux/auth/authOperations';
+import s from './RegisterView.module.css';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -31,7 +31,6 @@ export default function RegisterView() {
       register({ name: userName, email: userEmail, password: userPassword })
     );
     formReset();
-    // TODO chande path for auth, redirect
   };
 
   const formReset = () => {
