@@ -72,13 +72,32 @@ export default function LogInView() {
         </Button>
       </form>
       {error && (
-        <Stack sx={{ width: '400px', margin: '0 auto' }} spacing={2}>
+        <Stack
+          sx={{
+            width: '400px',
+            margin: '10px auto',
+            boxShadow: 8,
+            backgroundColor: '#fff',
+          }}
+          spacing={2}
+        >
           <Alert
             severity="error"
             variant="outlined"
-            onClose={() => {
+            onClose={setTimeout(() => {
               dispatch(resetError());
-            }}
+            }, 2000)}
+            action={
+              <Button
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  dispatch(resetError());
+                }}
+              >
+                Close
+              </Button>
+            }
           >
             {error}
           </Alert>
