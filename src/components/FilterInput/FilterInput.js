@@ -28,6 +28,7 @@ export default function FilterInput() {
             type="text"
             name="filter"
             value={filter}
+            autoFocus={true}
             onChange={onInputFind}
           />
         </label>

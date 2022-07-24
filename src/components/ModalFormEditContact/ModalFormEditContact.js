@@ -12,7 +12,7 @@ import s from './ModalFormEditContact.module.css';
 const modalRoot = document.querySelector('#modal-root');
 
 export default function ModalFormEditContact({ openedContact }) {
-  const [editContact] = useEditContactMutation();
+  const [editContact, { isLoading }] = useEditContactMutation();
   const {
     state: name,
     setState: setName,
@@ -33,9 +33,9 @@ export default function ModalFormEditContact({ openedContact }) {
       number,
     };
 
-    editContact({ id: openedContact.id, contact: contactData });
-    dispatch(updateModalState());
-    dispatch(resetOpenedContact());
+    editContact({ id: openedContact.id, contact: contactData })
+      .then(() => dispatch(updateModalState()))
+      .then(() => dispatch(resetOpenedContact()));
   };
 
   const onBackdropClose = useCallback(
@@ -77,6 +77,7 @@ export default function ModalFormEditContact({ openedContact }) {
               name="name"
               value={name}
               onChange={handleNameChange}
+              maxLength={15}
               autoFocus={true}
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -98,7 +99,7 @@ export default function ModalFormEditContact({ openedContact }) {
           </label>
           <button className={s.btn} type="submit">
             <PersonAddIcon className={s.addContactIcon} />
-            Save contact
+            {isLoading ? 'Saving...' : 'Save contact'}
           </button>
         </form>
       </div>

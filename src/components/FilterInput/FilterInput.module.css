@@ -6,7 +6,8 @@
   transition: all 200ms ease-in-out;
 }
 
-.inputLabel:hover {
+.inputLabel:hover,
+.inputLabel:focus-within {
   color: var(--accent-color-transparent);
 }
 
@@ -23,6 +24,7 @@
 
 .filterInput:hover,
 .filterInput:focus {
+  outline: none;
   border-color: var(--accent-color-transparent);
 }
 
