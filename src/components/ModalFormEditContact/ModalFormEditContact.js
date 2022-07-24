@@ -15,11 +15,13 @@ export default function ModalFormEditContact({ openedContact }) {
   const [editContact, { isLoading }] = useEditContactMutation();
   const {
     state: name,
+    // eslint-disable-next-line no-unused-vars
     setState: setName,
     handleChange: handleNameChange,
   } = useFormFields(openedContact.name);
   const {
     state: number,
+    // eslint-disable-next-line no-unused-vars
     setState: setNumber,
     handleChange: handleNumberChange,
   } = useFormFields(openedContact.number);

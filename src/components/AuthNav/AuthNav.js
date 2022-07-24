@@ -6,7 +6,7 @@ export default function AuthNav() {
     <ul className={s.authList}>
       <li className={s.authItem}>
         <NavLink
-          to="/registration"
+          to="/register"
           className={({ isActive }) => {
             return isActive ? 'activeNavLink' : 'navLink';
           }}
@@ -16,7 +16,7 @@ export default function AuthNav() {
       </li>
       <li className={s.authItem}>
         <NavLink
-          to="/authorization"
+          to="/login"
           className={({ isActive }) => {
             return isActive ? 'activeNavLink' : 'navLink';
           }}

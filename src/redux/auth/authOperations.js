@@ -20,7 +20,7 @@ export const register = createAsyncThunk(
       token.set(response.data.token);
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue('Something went wrong. Please try again.');
     }
   }
 );
@@ -33,7 +33,7 @@ export const logIn = createAsyncThunk(
       token.set(response.data.token);
       return response.data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue('Something went wrong. Please try again.');
     }
   }
 );

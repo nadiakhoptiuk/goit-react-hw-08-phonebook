@@ -68,13 +68,13 @@ export default function App() {
             <Route
               path="/contacts"
               element={
-                <PrivateRoute redirect="/authorization">
+                <PrivateRoute redirect="/login">
                   <PhonebookView />
                 </PrivateRoute>
               }
             ></Route>
             <Route
-              path="/registration"
+              path="/register"
               element={
                 <PublicRoute redirect="/contacts" restricted>
                   <RegisterView />
@@ -82,7 +82,7 @@ export default function App() {
               }
             />
             <Route
-              path="/authorization"
+              path="/login"
               element={
                 <PublicRoute redirect="/contacts" restricted>
                   <LogInView />

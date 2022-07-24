@@ -1,10 +1,14 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { TextField } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import useFormFields from 'hooks/useFormFields';
 import Section from 'components/Section';
 import { register } from 'redux/auth/authOperations';
+import { getError } from 'redux/auth/authSelectors';
+import { resetError } from 'redux/auth/authActions';
 import s from './RegisterView.module.css';
 
 export default function RegisterView() {
@@ -24,6 +28,7 @@ export default function RegisterView() {
     setState: setUserPassword,
     handleChange: handleUserPasswordChange,
   } = useFormFields('');
+  const error = useSelector(getError);
 
   const handleRegisterSubmit = evt => {
     evt.preventDefault();
@@ -83,6 +88,19 @@ export default function RegisterView() {
           Register now
         </Button>
       </form>
+      {error && (
+        <Stack sx={{ width: '400px', margin: '0 auto' }} spacing={2}>
+          <Alert
+            severity="error"
+            variant="outlined"
+            onClose={() => {
+              dispatch(resetError());
+            }}
+          >
+            {error}
+          </Alert>
+        </Stack>
+      )}
     </Section>
   );
 }
