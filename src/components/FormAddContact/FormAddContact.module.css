@@ -5,6 +5,15 @@
   margin: 0 auto;
 }
 
+.labelText {
+  color: inherit;
+  transition: all 200ms ease-in-out;
+}
+
+.labelText:hover {
+  color: var(--accent-color-transparent);
+}
+
 .input {
   width: 100%;
   padding: 10px 20px;
@@ -13,6 +22,13 @@
   background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  transition: all 200ms ease-in-out;
+}
+
+.input:hover,
+.input:focus {
+  background-color: transparent;
+  border-color: var(--accent-color-transparent);
 }
 
 .btn {
@@ -37,17 +53,17 @@
 .btn:hover,
 .btn:focus {
   transform: scale(1.05);
-  border-color: var(--accent-color);
+  border-color: var(--accent-color-transparent);
 }
 
 .btn:hover .addContactIcon,
 .btn:focus .addContactIcon {
-  color: var(--accent-color);
+  color: var(--accent-color-transparent);
 }
 
 .addContactIcon {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  color: var(--border-color);
+  color: rgba(0, 0, 0, 0.54);
 }

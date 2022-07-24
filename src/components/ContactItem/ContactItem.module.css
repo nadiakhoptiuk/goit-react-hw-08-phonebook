@@ -14,18 +14,18 @@
 }
 
 .contactItem:hover {
-  border-color: rgba(25, 118, 210, 0.5);
+  border-color: var(--accent-color-transparent);
   transform: scale(1.05);
   cursor: pointer;
 }
 
 .contactItem:hover .icon {
-  color: rgba(25, 118, 210, 0.5);
+  color: var(--accent-color-transparent);
 }
 
 .contactItem:hover .btnDelete,
 .contactItem:hover .btnEdit {
-  border-color: rgba(25, 118, 210, 0.5) !important;
+  border-color: var(--accent-color-transparent) !important;
 }
 
 .icon {

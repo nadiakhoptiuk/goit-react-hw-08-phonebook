@@ -5,6 +5,13 @@
 
 .authItem {
   font-size: 20px;
+  transform: scale(1);
+  transition: all 200ms ease-in-out;
+}
+
+.authItem:focus,
+.authItem:hover {
+  transform: scale(1.1);
 }
 
 .authItem:not(:last-child) {

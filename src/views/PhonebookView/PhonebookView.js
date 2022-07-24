@@ -18,10 +18,10 @@ export default function PhonebookView() {
       <Section title="Contacts" isHidden={false}>
         {isFetching ? (
           <Watch
-            height={58}
-            width={58}
+            height={48}
+            width={48}
             radius={45}
-            color="#00BFFF"
+            color="#1a75cfb3"
             wrapperClass="loader"
             ariaLabel="loading-indicator"
           />

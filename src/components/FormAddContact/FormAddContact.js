@@ -43,7 +43,7 @@ export default function FormAddContact() {
 
   return (
     <form className={s.form} onSubmit={handleSubmit}>
-      <label>
+      <label className={s.labelText}>
         Name
         <input
           className={s.input}
@@ -56,7 +56,7 @@ export default function FormAddContact() {
           required
         />
       </label>
-      <label>
+      <label className={s.labelText}>
         Number
         <input
           className={s.input}

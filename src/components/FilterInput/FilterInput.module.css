@@ -3,15 +3,27 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  transition: all 200ms ease-in-out;
+}
+
+.inputLabel:hover {
+  color: var(--accent-color-transparent);
 }
 
 .filterInput {
   padding: 10px 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 
   background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  transition: all 200ms ease-in-out;
+}
+
+.filterInput:hover,
+.filterInput:focus {
+  border-color: var(--accent-color-transparent);
 }
 
 .notification {
