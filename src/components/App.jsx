@@ -1,6 +1,6 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { Watch } from 'react-loader-spinner';
 import PrivateRoute from './Routes/PrivateRoute';
@@ -89,6 +89,7 @@ export default function App() {
                 </PublicRoute>
               }
             />
+            <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
         </main>
         {isModalShown && <ModalFormEditContact openedContact={openedContact} />}
