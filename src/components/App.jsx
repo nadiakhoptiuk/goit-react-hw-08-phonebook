@@ -68,7 +68,7 @@ export default function App() {
             <Route
               path="/contacts"
               element={
-                <PrivateRoute redirect="/login">
+                <PrivateRoute>
                   <PhonebookView />
                 </PrivateRoute>
               }
@@ -76,7 +76,7 @@ export default function App() {
             <Route
               path="/register"
               element={
-                <PublicRoute redirect="/contacts" restricted>
+                <PublicRoute restricted>
                   <RegisterView />
                 </PublicRoute>
               }
@@ -84,7 +84,7 @@ export default function App() {
             <Route
               path="/login"
               element={
-                <PublicRoute redirect="/contacts" restricted>
+                <PublicRoute restricted>
                   <LogInView />
                 </PublicRoute>
               }
