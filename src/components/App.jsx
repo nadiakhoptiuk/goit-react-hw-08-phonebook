@@ -66,15 +66,15 @@ export default function App() {
         <main>
           <Routes>
             <Route
-              path="/contacts"
+              path="contacts"
               element={
                 <PrivateRoute>
                   <PhonebookView />
                 </PrivateRoute>
               }
-            ></Route>
+            />
             <Route
-              path="/register"
+              path="register"
               element={
                 <PublicRoute restricted>
                   <RegisterView />
@@ -82,7 +82,7 @@ export default function App() {
               }
             />
             <Route
-              path="/login"
+              path="login"
               element={
                 <PublicRoute restricted>
                   <LogInView />
