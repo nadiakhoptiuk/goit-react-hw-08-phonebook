@@ -3,7 +3,7 @@
 Phonebook is phone contacts database web application/ It allows to save, edit and delete contact from personal phonebook.
 User registration/authorization is implemented with Swagger.
 
-[Hosted application link](https://nadiakhoptiuk.github.io/filmoteka_project/)
+[Hosted application link](https://nadiakhoptiuk.github.io/goit-react-hw-08-phonebook/)
 
 ## Used technologies
 
@@ -18,8 +18,8 @@ User registration/authorization is implemented with Swagger.
 ### Libraries:
 ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 
-### Utils:
-Backend - ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+### Backend:
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
 ## 
 
