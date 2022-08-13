@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import Container from '../Container';
 import AuthNav from 'components/AuthNav';
 import UserMenu from 'components/UserMenu';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
@@ -9,16 +10,18 @@ export default function Header() {
 
   return (
     <header className={s.header}>
-      <div className={s.headerContainer}>
-        {isLoggedIn ? (
-          <>
-            <h1 className={s.phonebookLink}>Phonebook</h1>
-            <UserMenu />
-          </>
-        ) : (
-          <AuthNav />
-        )}
-      </div>
+      <Container>
+        <div className={s.headerWrapper}>
+          {isLoggedIn ? (
+            <>
+              <h1 className={s.phonebookLink}>Phonebook</h1>
+              <UserMenu />
+            </>
+          ) : (
+            <AuthNav />
+          )}
+        </div>
+      </Container>
     </header>
   );
 }

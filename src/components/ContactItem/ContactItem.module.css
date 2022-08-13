@@ -1,10 +1,11 @@
 .contactItem {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 100%;
+  max-width: 400px;
   padding: 5px 10px;
-  margin: 10px;
+  margin: 5px;
 
   background-color: #fff;
   border: 1px solid var(--border-color);
@@ -29,12 +30,16 @@
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 40px;
+  height: 40px;
   color: rgba(0, 0, 0, 0.54);
 
   transition: all 200ms linear;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .contactName,
@@ -44,7 +49,8 @@
 }
 
 .btnList {
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .btnDelete {
@@ -67,7 +73,7 @@
 
 .btnEdit {
   composes: btnDelete;
-  margin-right: 10px !important;
+  margin-bottom: 5px;
 }
 
 .btnEdit:hover,
@@ -75,4 +81,39 @@
   color: var(--edit-color);
   border-color: currentColor;
   transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .contactItem {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contactItem {
+    width: 550px;
+    max-width: 550px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .infoWrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .btnList {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .btnEdit {
+    margin-bottom: 0;
+    margin-right: 10px !important;
+  }
 }

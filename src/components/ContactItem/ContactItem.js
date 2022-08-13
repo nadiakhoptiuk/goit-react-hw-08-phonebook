@@ -31,8 +31,11 @@ export default function ContactItem({ contactData }) {
   return (
     <li className={s.contactItem}>
       <PersonRoundedIcon className={s.icon} />
-      <p className={s.contactName}>{contactData.name}:</p>
-      <p className={s.contactNumber}>{contactData.number}</p>
+      <div className={s.infoWrapper}>
+        <p className={s.contactName}>{contactData.name}:</p>
+        <p className={s.contactNumber}>{contactData.number}</p>
+      </div>
+
       <ul className={s.btnList}>
         <IconButton
           aria-label="edit"

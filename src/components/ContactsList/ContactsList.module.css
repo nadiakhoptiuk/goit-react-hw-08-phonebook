@@ -3,6 +3,20 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 0;
+  margin: -5px;
 
   list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  .contactsList {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contactsList {
+    margin: -10px;
+    justify-content: space-evenly;
+  }
 }

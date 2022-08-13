@@ -1,19 +1,24 @@
 .header {
   display: flex;
-  padding: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
-.headerContainer {
+.headerWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
 }
 
 .phonebookLink {
-  font-size: 25px;
-  font-weight: 500;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .phonebookLink {
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+  }
 }

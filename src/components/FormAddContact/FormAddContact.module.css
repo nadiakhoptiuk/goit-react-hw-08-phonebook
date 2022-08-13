@@ -1,5 +1,6 @@
 .form {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -35,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 200px;
   height: 40px;
   margin: 0 auto;
   margin-top: 20px;
