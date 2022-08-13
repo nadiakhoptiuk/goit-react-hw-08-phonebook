@@ -1,6 +1,6 @@
 # Phonebook
 
-Phonebook is a personal web application with contacts. It allows to save phone contacts to personal database, edit and delete contacts from it.
+Phonebook is a personal web application with contacts list. It allows to save phone contacts to personal database, edit and delete contacts from it.
 User registration/authorization and database is implemented with Swagger.
 
 [Hosted application link](https://nadiakhoptiuk.github.io/goit-react-hw-08-phonebook/)
