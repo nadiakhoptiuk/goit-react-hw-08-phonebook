@@ -1,5 +1,10 @@
 @import 'modern-normalize/modern-normalize.css';
 
+:root {
+  --accent-color: #2e7fcf;
+  --main-text-color: #000000;
+}
+
 html[theme-type='light'] {
   --bg-color: #f3f9f9;
 
@@ -67,7 +72,6 @@ ul {
 a {
   display: block;
   text-decoration: none;
-  color: inherit;
 }
 
 button {
@@ -77,11 +81,11 @@ button {
 
 .navLink {
   font-size: 20px;
-  color: black;
+  color: var(--main-text-color);
 }
 
 .activeNavLink {
-  composes: navLink;
+  font-size: 20px;
   color: var(--accent-color);
 }
 
