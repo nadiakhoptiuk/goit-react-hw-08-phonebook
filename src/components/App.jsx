@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { Watch } from 'react-loader-spinner';
+import Header from './Header';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
 import { refreshCurrentUser } from 'redux/auth/authOperations';
-import Header from './Header';
 import {
   isModalShownSelector,
   openedContactSelector,

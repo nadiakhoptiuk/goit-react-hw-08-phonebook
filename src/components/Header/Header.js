@@ -28,10 +28,7 @@ export default function Header() {
               <UserMenu />
             </>
           ) : (
-            <>
-              <ThemeSwitch />
-              <AuthNav />
-            </>
+            <AuthNav />
           )}
         </div>
       </Container>
