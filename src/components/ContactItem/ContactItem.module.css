@@ -5,6 +5,7 @@
   width: 100%;
   padding: 5px 15px;
 
+  color: var(--main-text-color);
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -17,24 +18,25 @@
 }
 
 .contactItem:hover {
-  border-color: var(--accent-color-transparent);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
   transform: scale(1.05);
   cursor: pointer;
 }
 
 .contactItem:hover .icon {
-  color: var(--accent-color-transparent);
+  color: var(--accent-color);
 }
 
 .contactItem:hover .btnDelete,
 .contactItem:hover .btnEdit {
-  border-color: var(--accent-color-transparent) !important;
+  border-color: var(--accent-color) !important;
 }
 
 .icon {
   width: 40px;
   height: 40px;
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--icon-color);
 
   transition: all 200ms linear;
 }
@@ -53,12 +55,13 @@
 .btnList {
   display: flex;
   flex-direction: column;
+  color: var(--icon-color);
 }
 
 .btnDelete {
   width: 64px;
   padding: 5px 10px !important;
-  background-color: #fff !important;
+  background-color: var(--bg-color) !important;
   border-radius: 4px !important;
   border: 1px solid var(--border-color) !important;
   cursor: pointer;
@@ -88,13 +91,19 @@
 @media screen and (min-width: 768px) {
   .contactItem {
     width: calc((100% - 2 * 10px) / 2);
+    margin-bottom: 0;
     margin: 5px;
+  }
+
+  .contactItem:not(:last-child) {
+    margin-bottom: 5px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .contactItem {
     width: calc((100% - 2 * 20px) / 2);
+    margin-bottom: 0;
     margin: 10px;
   }
 

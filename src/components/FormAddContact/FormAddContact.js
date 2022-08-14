@@ -71,7 +71,7 @@ export default function FormAddContact() {
         />
       </label>
       <button className={s.btn} type="submit">
-        <PersonAddIcon className={s.addContactIcon} />
+        <PersonAddIcon className={s.addContactIcon} color="inherit" />
         {isLoading ? 'Addition...' : 'Add contact'}
       </button>
     </form>

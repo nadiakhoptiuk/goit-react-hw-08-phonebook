@@ -22,12 +22,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       },
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#dde1e5',
+        backgroundColor: theme.palette.mode === 'dark' ? '#52606e' : '#dde1e5',
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#ffffde',
+    backgroundColor: theme.palette.mode === 'dark' ? '#002d75' : '#ffffde',
     width: 32,
     height: 32,
     '&:before': {
@@ -46,8 +46,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   '& .MuiSwitch-track': {
     opacity: 1,
-    backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#dde1e5',
-    borderRadius: 20 / 2,
+    backgroundColor: theme.palette.mode === 'dark' ? '#52606e' : '#dde1e5',
+    // borderRadius: 20 / 2,
   },
 }));
 

@@ -1,21 +1,29 @@
 @import 'modern-normalize/modern-normalize.css';
 
 html[theme-type='light'] {
-  --bg-color: #f0f8ff;
+  --bg-color: #f3f9f9;
+
+  --main-text-color: #000000;
+
   --border-color: #d1d0d0;
   --warning-color: #d44444b6;
   --edit-color: #d4b244;
   --accent-color: #2e7fcf;
-  --accent-color-transparent: #1a75cfb3;
+
+  --icon-color: rgba(0, 0, 0, 0.54);
 }
 
 html[theme-type='dark'] {
-  --bg-color: #222267;
-  --border-color: #d1d0d0;
+  --bg-color: #292929;
+
+  --main-text-color: #fff;
+
+  --border-color: #6e6d6d;
   --warning-color: #d44444b6;
   --edit-color: #d4b244;
-  --accent-color: #2e7fcf;
-  --accent-color-transparent: #1a75cfb3;
+  --accent-color: #56a0eb;
+
+  --icon-color: rgba(119, 118, 118, 0.54);
 }
 
 body {
@@ -27,6 +35,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: var(--bg-color);
+  color: var(--main-text-color);
 }
 
 body.modal-is-open {
@@ -52,12 +61,18 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  color: inherit;
 }
 
 a {
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  color: inherit;
+  background-color: inherit;
 }
 
 .navLink {

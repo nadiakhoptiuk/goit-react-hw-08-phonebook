@@ -9,14 +9,15 @@
 
 .inputLabel:hover,
 .inputLabel:focus-within {
-  color: var(--accent-color-transparent);
+  color: var(--accent-color);
 }
 
 .filterInput {
   padding: 10px 20px;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 20px;
 
+  color: var(--main-text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -26,7 +27,7 @@
 .filterInput:hover,
 .filterInput:focus {
   outline: none;
-  border-color: var(--accent-color-transparent);
+  border-color: var(--accent-color);
 }
 
 .notification {

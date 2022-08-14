@@ -24,9 +24,15 @@
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 500px;
-  height: 320px;
-  background-color: #fff;
+  height: 330px;
+  background-color: var(--bg-color);
   border-radius: 4px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .form {
@@ -37,14 +43,31 @@
   margin: 0 auto;
 }
 
+.labelText {
+  color: inherit;
+  transition: all 200ms ease-in-out;
+}
+
+.labelText:hover,
+.labelText:focus-within {
+  color: var(--accent-color);
+}
+
 .input {
   width: 100%;
   padding: 10px 20px;
   margin-bottom: 10px;
+  margin-top: 5px;
 
+  color: inherit;
   background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+}
+
+.input:hover,
+.input:focus {
+  border-color: var(--accent-color);
 }
 
 .btn {
@@ -62,6 +85,7 @@
   border: 1px solid var(--border-color);
   border-radius: 4px;
   cursor: pointer;
+  color: var(--main-text-color);
 
   transform: scale(1);
   transition: all 200ms linear;
@@ -70,6 +94,7 @@
 .btn:hover,
 .btn:focus {
   transform: scale(1.05);
+  color: var(--accent-color);
   border-color: var(--accent-color);
 }
 

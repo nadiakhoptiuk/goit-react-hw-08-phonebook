@@ -3,6 +3,8 @@ import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import IconButton from '@mui/material/IconButton';
+import Close from '@mui/icons-material/Close';
 import { useEditContactMutation } from 'redux/contacts';
 import useFormFields from '../../hooks/useFormFields';
 import { updateModalState, resetOpenedContact } from 'redux/modal/modalActions';
@@ -69,9 +71,18 @@ export default function ModalFormEditContact({ openedContact }) {
   return createPortal(
     <div className={s.overlay} onClick={onBackdropClose}>
       <div className={s.modal}>
+        <IconButton
+          aria-label="close modal button"
+          color="inherit"
+          className={s.closeBtn}
+          onClick={() => dispatch(updateModalState())}
+        >
+          <Close />
+        </IconButton>
+
         <h2 className={s.title}>Please edit your contact:</h2>
         <form className={s.form} onSubmit={handleEditSubmit}>
-          <label>
+          <label className={s.labelText}>
             Name
             <input
               className={s.input}
@@ -80,13 +91,12 @@ export default function ModalFormEditContact({ openedContact }) {
               value={name}
               onChange={handleNameChange}
               maxLength={15}
-              autoFocus={true}
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
           </label>
-          <label>
+          <label className={s.labelText}>
             Number
             <input
               className={s.input}

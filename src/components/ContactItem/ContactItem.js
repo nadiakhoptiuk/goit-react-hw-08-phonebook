@@ -38,6 +38,7 @@ export default function ContactItem({ contactData }) {
 
       <ul className={s.btnList}>
         <IconButton
+          color="inherit"
           aria-label="edit"
           size="large"
           className={s.btnEdit}
@@ -53,6 +54,7 @@ export default function ContactItem({ contactData }) {
           </LoadingButton>
         ) : (
           <IconButton
+            color="inherit"
             aria-label="delete"
             size="large"
             className={s.btnDelete}

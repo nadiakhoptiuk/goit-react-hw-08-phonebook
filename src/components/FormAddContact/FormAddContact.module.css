@@ -12,13 +12,14 @@
 }
 
 .labelText:hover {
-  color: var(--accent-color-transparent);
+  color: var(--accent-color);
 }
 
 .input {
   width: 100%;
   padding: 10px 20px;
   margin-bottom: 10px;
+  margin-top: 5px;
 
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -29,7 +30,7 @@
 .input:hover,
 .input:focus {
   background-color: transparent;
-  border-color: var(--accent-color-transparent);
+  border-color: var(--accent-color);
 }
 
 .btn {
@@ -54,17 +55,20 @@
 .btn:hover,
 .btn:focus {
   transform: scale(1.05);
-  border-color: var(--accent-color-transparent);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .btn:hover .addContactIcon,
 .btn:focus .addContactIcon {
-  color: var(--accent-color-transparent);
+  color: var(--accent-color);
 }
 
 .addContactIcon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin-right: 10px;
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--icon-color);
+
+  transition: color 200ms linear;
 }
