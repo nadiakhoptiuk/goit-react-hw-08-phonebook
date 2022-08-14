@@ -5,6 +5,7 @@ import UserMenu from 'components/UserMenu';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
 import logo from '../../images/Phonebook-icon-min.png';
 import s from './Header.module.css';
+import ThemeSwitch from 'components/ThemeSwitch/ThemeSwitch';
 
 export default function Header() {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -23,10 +24,14 @@ export default function Header() {
                 className={s.logo}
               />
               <h1 className={s.phonebookTitle}>Phonebook</h1>
+              <ThemeSwitch />
               <UserMenu />
             </>
           ) : (
-            <AuthNav />
+            <>
+              <ThemeSwitch />
+              <AuthNav />
+            </>
           )}
         </div>
       </Container>

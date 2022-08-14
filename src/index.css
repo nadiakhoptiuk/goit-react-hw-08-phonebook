@@ -1,6 +1,16 @@
 @import 'modern-normalize/modern-normalize.css';
 
-:root {
+html[theme-type='light'] {
+  --bg-color: #f0f8ff;
+  --border-color: #d1d0d0;
+  --warning-color: #d44444b6;
+  --edit-color: #d4b244;
+  --accent-color: #2e7fcf;
+  --accent-color-transparent: #1a75cfb3;
+}
+
+html[theme-type='dark'] {
+  --bg-color: #222267;
   --border-color: #d1d0d0;
   --warning-color: #d44444b6;
   --edit-color: #d4b244;
@@ -15,6 +25,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--bg-color);
 }
 
 body.modal-is-open {
