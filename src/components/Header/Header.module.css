@@ -1,4 +1,5 @@
 .header {
+  width: 100%;
   display: flex;
   padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
@@ -11,12 +12,16 @@
   width: 100%;
 }
 
-.phonebookLink {
+.logo {
+  margin-right: 10px;
+}
+
+.phonebookTitle {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
-  .phonebookLink {
+@media screen and (min-width: 480px) {
+  .phonebookTitle {
     display: block;
     font-size: 25px;
     font-weight: 500;

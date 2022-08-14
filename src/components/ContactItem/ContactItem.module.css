@@ -3,15 +3,17 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 400px;
-  padding: 5px 10px;
-  margin: 5px;
+  padding: 5px 15px;
 
   background-color: #fff;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   transform: scale(1);
   transition: all 200ms linear;
+}
+
+.contactItem:not(:last-child) {
+  margin-bottom: 7px;
 }
 
 .contactItem:hover {
@@ -85,14 +87,19 @@
 
 @media screen and (min-width: 768px) {
   .contactItem {
-    width: 350px;
+    width: calc((100% - 2 * 10px) / 2);
+    margin: 5px;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .contactItem {
-    width: 550px;
-    max-width: 550px;
+    width: calc((100% - 2 * 20px) / 2);
+    margin: 10px;
+  }
+
+  .contactItem:not(:last-child) {
+    margin-bottom: 10px;
   }
 
   .icon {

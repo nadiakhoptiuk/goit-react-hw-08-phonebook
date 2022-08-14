@@ -3,6 +3,7 @@ import Container from '../Container';
 import AuthNav from 'components/AuthNav';
 import UserMenu from 'components/UserMenu';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import logo from '../../images/Phonebook-icon-min.png';
 import s from './Header.module.css';
 
 export default function Header() {
@@ -14,7 +15,14 @@ export default function Header() {
         <div className={s.headerWrapper}>
           {isLoggedIn ? (
             <>
-              <h1 className={s.phonebookLink}>Phonebook</h1>
+              <img
+                src={logo}
+                alt="phonebook logo"
+                width={35}
+                height={35}
+                className={s.logo}
+              />
+              <h1 className={s.phonebookTitle}>Phonebook</h1>
               <UserMenu />
             </>
           ) : (
