@@ -1,8 +1,8 @@
 import React from 'react';
 import useFormFields from 'hooks/useFormFields';
-import s from './FormAddContact.module.css';
 import { useGetContactsQuery, useAddContactMutation } from 'redux/contacts';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import s from './FormAddContact.module.css';
 
 export default function FormAddContact() {
   const {
@@ -51,7 +51,7 @@ export default function FormAddContact() {
           name="name"
           value={name}
           onChange={handleNameChange}
-          maxLength={15}
+          maxLength={30}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
@@ -64,9 +64,10 @@ export default function FormAddContact() {
           type="tel"
           name="number"
           value={number}
+          maxLength={17}
           onChange={handleNumberChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          title="Phone number must be digits, contain spaces, dashes, parentheses and start with +"
           required
         />
       </label>

@@ -32,7 +32,7 @@ export default function ContactItem({ contactData }) {
     <li className={s.contactItem}>
       <PersonRoundedIcon className={s.icon} />
       <div className={s.infoWrapper}>
-        <p className={s.contactName}>{contactData.name}:</p>
+        <p className={s.contactName}>{contactData.name}</p>
         <p className={s.contactNumber}>{contactData.number}</p>
       </div>
 
