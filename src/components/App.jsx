@@ -1,6 +1,6 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { Watch } from 'react-loader-spinner';
 import Header from './Header';
@@ -93,6 +93,7 @@ export default function App() {
               path="*"
               element={
                 <PublicRoute restricted>
+                  <Navigate to="/login" replace />
                   <LogInView />
                 </PublicRoute>
               }
