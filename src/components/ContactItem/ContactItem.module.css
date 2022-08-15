@@ -62,6 +62,12 @@
   text-overflow: ellipsis;
 }
 
+/* .contactName:hover {
+  width: 400px;
+  overflow: visible;
+  background-color: var(--bg-color);
+} */
+
 .contactNumber {
   min-width: 131px;
 }
@@ -137,6 +143,7 @@
   .contactName {
     min-width: 120px;
     max-width: 120px;
+    background-color: var(--bg-color);
   }
 
   .icon {

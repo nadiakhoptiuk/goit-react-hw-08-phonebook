@@ -15,8 +15,6 @@ import { filterContactsReducer } from './filter/filterContactsReducer';
 import { contactsApi } from './contacts';
 import authReducer from './auth/authSlice';
 import { modalReducer } from './modal/modalReducer';
-// import { applyMiddleware } from '@reduxjs/toolkit';
-// import thunk from 'redux-thunk';
 
 const authPersistConfig = {
   key: 'auth',
